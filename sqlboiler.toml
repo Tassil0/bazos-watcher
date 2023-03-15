@@ -1,0 +1,7 @@
+[psql]
+dbname = "bazos"
+host = "localhost"
+port = 5420
+user = "bazos"
+pass = "kokos"
+sslmode = "disable"

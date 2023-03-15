@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    image: 'postgres:latest'
+    container_name: bazos-watcher-db
+    ports:
+      - '5420:5432'
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+    env_file:
+      - 'docker.env'
+    restart: always
+
+volumes:
+  dbdata:
